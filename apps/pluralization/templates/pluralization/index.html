@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form class="pb-2" action="{% url 'pluralization.index' %}" method="post">
+    {% csrf_token %}
+    <div>
+        <div>
+            <label for="word">Please write a singular word</label>
+            <input type="text" name="word" class="form-control form-control-lg" placeholder="Word">                                        
+        </div>
+        {% if word %}
+        {{ word }}
+        {% endif %}
+    </div>
+
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Pluralize</button>
+    </div>
+</form>
+{% endblock content %}

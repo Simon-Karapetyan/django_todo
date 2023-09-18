@@ -22,4 +22,5 @@ urlpatterns = [
     path('', views.index, name='home'),
     path('admin', admin.site.urls),
     path('todo', include('apps.todo.urls')),
+    path('pluralization', include('apps.pluralization.urls')),
 ]
